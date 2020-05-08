@@ -1,0 +1,19 @@
+# Composer
+/vendor
+composer.lock
+
+# IDE
+/.idea
+*.sublime-project
+*.sublime-workspace
+/.vscode
+.phpstorm.meta.php
+
+# Code Styling / Linting
+.php_cs.cache
+
+# OS
+.DS_Store
+
+# config
+.env

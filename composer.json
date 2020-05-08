@@ -1,0 +1,23 @@
+{
+    "name": "ashtokalo/ewyii",
+    "description": "Yii 2.0 Empty Web Application Template",
+    "license": "MIT",
+    "type": "project",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.2.0",
+        "yiisoft/yii2": "~2.0.35"
+    },
+    "authors": [
+        {
+            "name": "Alexey Shtokalo",
+            "email": "alexey@shtokalo.net"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
