@@ -1,0 +1,60 @@
+version: "3"
+
+networks:
+  net: {}
+
+services:
+  web:
+    build:
+        context: .
+        dockerfile: docker/web/Dockerfile
+    ports:
+      - ${FRONTEND_PORT}:8010
+    volumes:
+      - ./docker/web/conf.d:/etc/nginx/conf.d:ro
+      - .:/ewyii:ro
+    environment:
+      TZ: ${APP_TZ}
+    depends_on:
+      - php
+    networks:
+      net:
+        aliases:
+          - ${APP_HOST}
+  php:
+    build:
+        context: .
+        dockerfile: docker/php/Dockerfile
+    volumes: &php_volumes
+      - ./runtime/.composer:/root/.composer
+      - .:/ewyii
+    environment: &php_environment
+      TZ: ${APP_TZ}
+      COMPOSER_ALLOW_SUPERUSER: 1
+      MYSQL_HOST: ${MYSQL_HOST}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    depends_on: &php_depends_on
+      - mysql
+    networks: &php_networks
+      net: {}
+  mysql:
+    image: mysql:5.7
+    ports:
+      - ${MYSQL_PORT}:3306
+    volumes:
+      - ./runtime/mysql:/var/lib/mysql
+    command:
+      - --sql-mode=
+      - --character-set-server=utf8
+      - --collation-server=utf8_general_ci
+      - --skip-character-set-client-handshake
+    environment:
+      TZ: ${APP_TZ}
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    networks:
+      net: {}

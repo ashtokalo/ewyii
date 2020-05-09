@@ -16,4 +16,6 @@ composer.lock
 .DS_Store
 
 # config
+/app/config/local
+/runtime
 .env

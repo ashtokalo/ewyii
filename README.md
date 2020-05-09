@@ -8,7 +8,7 @@ logs, errors and queues.
 
 It's best to start with [Composer][2] and simple command like:
 
-      composer create-project --prefer-dist ashtokalo/ewyii
+      composer create-project --prefer-dist --stability=dev ashtokalo/ewyii example
 
 ## Directory Structure
 
@@ -16,7 +16,7 @@ It's best to start with [Composer][2] and simple command like:
         api/        application interface
         backend/    backend interface
         cli/        command line interface
-        common/     common application resources
+        config/     application configurations
         frontend/   frontend interface
       docker/       assets to run docker environment
       docs/         some documentation to run project
@@ -27,8 +27,8 @@ It's best to start with [Composer][2] and simple command like:
 ## Configuration
 
 Use file `.env` or environment variables to pass sensitive data to application. See `.env.dist` for example.
-All tiers has it's own configuration files inherited from `common/config`, e.g. `app/backend/config`. It's
-regular Yii configuration files.
+All tiers has it's own configuration files to extend `config/common.php`, e.g. `app/config/frontend.php`.
+It's regular Yii configuration files.
 
 ## Testing
 

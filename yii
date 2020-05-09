@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+require(__DIR__ . '/app/bootstrap.php');
+
+$config = \yii\helpers\ArrayHelper::merge(
+    require(__DIR__ . '/app/common/config/main.php'),
+    require(__DIR__ . '/app/common/config/' . YII_ENV . '/main.php'),
+    require(__DIR__ . '/app/cli/config/main.php'),
+    require(__DIR__ . '/app/cli/config/' . YII_ENV . '/main.php')
+);
+$application = new \yii\console\Application($config);
+$exitCode = $application->run();
+exit($exitCode);

@@ -1,0 +1,11 @@
+/.idea
+/vendor
+/runtime/*
+/app/frontend/assets/*
+/app/backend/assets/*
+/.dockerignore
+/.editorconfig
+/.gitignore
+/.php_cs*
+/docker-compose.yml
+/yii.bat
