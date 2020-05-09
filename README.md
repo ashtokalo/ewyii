@@ -5,6 +5,7 @@ api, frontend and backend. Backend styled with [AdminLTE][1] theme and includes 
 logs, errors and queues.
 
 [![StyleCI](https://github.styleci.io/repos/262277262/shield?branch=master)](https://github.styleci.io/repos/262277262)
+[![Total Downloads](https://img.shields.io/packagist/dt/ashtokalo/ewyii.svg)](https://packagist.org/packages/ashtokalo/ewyii)
 
 ## Installation
 
