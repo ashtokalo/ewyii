@@ -4,6 +4,8 @@ The Yii 2.0 web application template used to rapidly start common web project wi
 api, frontend and backend. Backend styled with [AdminLTE][1] theme and includes interfaces to manage users,
 logs, errors and queues.
 
+[![StyleCI](https://github.styleci.io/repos/262277262/shield?branch=master)](https://github.styleci.io/repos/262277262)
+
 ## Installation
 
 It's best to start with [Composer][2] and simple command like:
