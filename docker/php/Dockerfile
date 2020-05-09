@@ -29,10 +29,7 @@ RUN apt-get update \
     && rm /tmp/composer-setup.php
 
 # Development requirements
-RUN pecl install xdebug-2.6.0 \
-    && docker-php-ext-enable xdebug \
-    && curl -L -o /usr/local/bin/php-cs-fixer https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar \
-    && chmod a+x /usr/local/bin/php-cs-fixer
+#RUN pecl install xdebug-2.6.0 && docker-php-ext-enable xdebug
 
 WORKDIR /ewyii
 COPY . /ewyii

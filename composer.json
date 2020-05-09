@@ -20,5 +20,17 @@
             "type": "composer",
             "url": "https://asset-packagist.org"
         }
-    ]
+    ],
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.17@dev"
+    },
+
+    "scripts": {
+        "check-style": [
+            "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --dry-run -vv --diff --ansi"
+        ],
+        "fix-style": [
+            "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --diff --diff-format=udiff --verbose"
+        ]
+    }
 }

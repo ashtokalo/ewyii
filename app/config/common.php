@@ -8,8 +8,7 @@ return [
     'runtimePath' => __DIR__ . '/../../runtime',
     'vendorPath'  => __DIR__ . '/../../vendor',
     'components'  => [
-        'cache' =>
-            getenv('MEMCACHE_HOST')
+        'cache' => getenv('MEMCACHE_HOST')
                 ? [
                 'class'   => \yii\caching\MemCache::class,
                 'servers' => [
@@ -25,8 +24,11 @@ return [
             ],
         'db'    => [
             'class'             => \yii\db\Connection::class,
-            'dsn'               => sprintf('mysql:host=%s;dbname=%s', getenv('MYSQL_HOST'),
-                getenv('MYSQL_DATABASE')),
+            'dsn'               => sprintf(
+                'mysql:host=%s;dbname=%s',
+                getenv('MYSQL_HOST'),
+                getenv('MYSQL_DATABASE')
+            ),
             'username'          => getenv('MYSQL_USER'),
             'password'          => getenv('MYSQL_PASSWORD'),
             'charset'           => 'utf8',

@@ -1,17 +1,13 @@
 <?php
 
-try
-{
+try {
     require(__DIR__ . '/../../bootstrap.php');
-}
-catch (\Exception $e)
-{
+} catch (\Exception $e) {
     http_response_code(500);
     exit($e->getMessage());
 }
 
-if (APP_LOCKED)
-{
+if (APP_LOCKED) {
     http_response_code(503);
     header('Retry-After: 30');
     exit('Maintenance mode.');

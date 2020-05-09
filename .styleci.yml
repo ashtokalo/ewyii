@@ -1,17 +1,10 @@
 php:
   preset: psr2
   risky: true
-  enabled:
-    - long_array_syntax
   disabled:
     - align_double_arrow
   finder:
     exclude:
-      - "modules"
-      - "node_modules"
-      - "storage"
       - "vendor"
+      - "runtime"
     name: "*.php"
-    not-name:
-      - "*.blade.php"
-      - "_ide_helper.php"

@@ -3,7 +3,6 @@
  * Yii bootstrap file.
  * Used for enhanced IDE code autocomplete.
  */
-
 require(__DIR__ . '/../vendor/yiisoft/yii2/BaseYii.php');
 
 /**
@@ -23,7 +22,7 @@ Yii::$classMap = require(__DIR__ . '/../vendor/yiisoft/yii2/classes.php');
 Yii::$container = new yii\di\Container();
 
 /**
- * Class CommonApp
+ * Class CommonApp.
  *
  */
 abstract class CommonApp extends yii\base\Application
@@ -31,14 +30,14 @@ abstract class CommonApp extends yii\base\Application
 }
 
 /**
- * Class FrontendApp
+ * Class FrontendApp.
  */
 class WebApp extends yii\web\Application
 {
 }
 
 /**
- * Class ConsoleApp
+ * Class ConsoleApp.
  */
 class ConsoleApp extends yii\console\Application
 {

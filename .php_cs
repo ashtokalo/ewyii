@@ -5,14 +5,29 @@ return PhpCsFixer\Config::create()
     ->setUsingCache(true)
     ->setRules(array(
         '@PSR2' => true,
+        'align_multiline_comment' => true,
         'array_syntax' => ['syntax' => 'short'],
+        'blank_line_after_opening_tag' => true,
         'blank_line_before_return' => true,
+        'braces' => ['allow_single_line_closure' => true,],
         'cast_spaces' => true,
+        'compact_nullable_typehint' => true,
         'concat_space' => ['spacing' => 'one'],
+        'declare_equal_normalize' => true,
+        'function_typehint_space' => true,
+        'new_with_braces' => true,
         'no_empty_statement' => true,
         'no_extra_consecutive_blank_lines' => ['use'],
         'no_leading_import_slash' => true,
+        'no_blank_lines_after_class_opening' => true,
+        'no_blank_lines_after_phpdoc' => true,
+        'no_empty_comment' => true,
+        'no_unneeded_control_parentheses' => true,
+        'no_unneeded_curly_braces' => true,
         'no_multiline_whitespace_around_double_arrow' => true,
+        'no_useless_else' => true,
+        'no_useless_return' => true,
+        'normalize_index_brace' => true,
         'no_multiline_whitespace_before_semicolons' => true,
         'no_trailing_comma_in_singleline_array' => true,
         'no_unused_imports' => true,
@@ -22,14 +37,15 @@ return PhpCsFixer\Config::create()
         'phpdoc_order' => true,
         'phpdoc_separation' => false,
         'phpdoc_summary' => true,
+        'single_line_comment_style' => ['comment_types' => ['hash']],
         'space_after_semicolon' => true,
+        'standardize_increment' => true,
         'standardize_not_equals' => true,
+        'ternary_operator_spaces' => true,
         'ternary_to_null_coalescing' => true,
         'trailing_comma_in_multiline_array' => true,
+        'whitespace_after_comma_in_array' => true,
+        'yoda_style' => ['equal' => true, 'identical' => true],
+        'lowercase_static_reference' => true,
     ))
-    ->setFinder(
-        PhpCsFixer\Finder::create()
-            ->exclude('vendor')
-            ->in(__DIR__)
-    )
-    ;
+    ->setFinder(PhpCsFixer\Finder::create()->exclude('vendor')->in(__DIR__));

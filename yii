@@ -2,12 +2,9 @@
 <?php
 require(__DIR__ . '/app/bootstrap.php');
 
-$config = \yii\helpers\ArrayHelper::merge(
-    require(__DIR__ . '/app/common/config/main.php'),
-    require(__DIR__ . '/app/common/config/' . YII_ENV . '/main.php'),
-    require(__DIR__ . '/app/cli/config/main.php'),
-    require(__DIR__ . '/app/cli/config/' . YII_ENV . '/main.php')
-);
-$application = new \yii\console\Application($config);
-$exitCode = $application->run();
-exit($exitCode);
+exit(($app = new \yii\console\Application(\yii\helpers\ArrayHelper::merge(
+    require(__DIR__ . '/app/config/common.php'),
+    require(__DIR__ . '/app/config/' . YII_ENV . '/common.php'),
+    require(__DIR__ . '/app/config/cli.php'),
+    require(__DIR__ . '/app/config/' . YII_ENV . '/cli.php')
+)))->run());
